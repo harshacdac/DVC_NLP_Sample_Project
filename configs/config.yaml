@@ -4,7 +4,7 @@ artifacts:
   ARTIFACTS_DIR: artifacts
   PREPARED_DATA: prepared
   TRAIN_DATA: train.tsv
-  TEST_DATA: test.csv
+  TEST_DATA: test.tsv
 
 source_data:
   data_dir: data
