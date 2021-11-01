@@ -29,7 +29,7 @@ def main(config_path, params_path):
     create_directories([prepared_data_dir_path])
     train_data_path= os.path.join(prepared_data_dir_path, artifacts["TRAIN_DATA"])
     test_data_path= os.path.join(prepared_data_dir_path, artifacts["TEST_DATA"])
-    encode="utf8"
+    encode="utf-8"
     with open(input_data, encoding=encode) as fd_in:
         with open(train_data_path, "w", encoding=encode) as fd_out_train:
             with open(test_data_path, "w", encoding=encode) as fd_out_test:
