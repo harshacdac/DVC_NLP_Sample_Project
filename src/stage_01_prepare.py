@@ -46,9 +46,9 @@ if __name__ == '__main__':
 
     try:
         logging.info("\n********************")
-        logging.info(">>>>> stage {STAGE} started <<<<<")
+        logging.info(f">>>>> stage {STAGE} started <<<<<")
         main(config_path=parsed_args.config, params_path=parsed_args.params)
-        logging.info(">>>>> stage {STAGE} completed <<<<<n")
+        logging.info(f">>>>> stage {STAGE} completed <<<<<n")
     except Exception as e:
         logging.exception(e)
         raise e
