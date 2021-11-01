@@ -141,3 +141,9 @@ configs/secrets.yaml
 
 
 
+configs/config.yaml.bak
+src/utils/featurize.py.bak
+src/utils/datamgmt.py.bak
+src/utils/common.py.bak
+src/stage_02_featurization.py.bak
+src/stage_01_prepare.py.bak
