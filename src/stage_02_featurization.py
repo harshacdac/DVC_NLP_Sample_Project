@@ -25,7 +25,7 @@ def main(config_path, params_path):
     train_data_path = os.path.join(prepared_data_dir_path, artifacts["TRAIN_DATA"])
     test_data_path = os.path.join(prepared_data_dir_path, artifacts["TEST_DATA"])
 
-    featurized_data_dir_path = os.path.join(artifacts["ARTIFACTS_DIR"], artifacts["PREPARED_DATA"])
+    featurized_data_dir_path = os.path.join(artifacts["ARTIFACTS_DIR"], artifacts["FEATURIZED_DATA"])
     create_directories([featurized_data_dir_path])
     
     
