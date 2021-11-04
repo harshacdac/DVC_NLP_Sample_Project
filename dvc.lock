@@ -4,8 +4,8 @@ stages:
     cmd: python src/stage_01_prepare.py --config=configs/config.yaml --params=params.yaml
     deps:
     - path: configs/config.yaml
-      md5: a54bad447b68aa62d3bb5ef620739bc5
-      size: 354
+      md5: 2a3149dc1240f34478e4ef657b1ae986
+      size: 427
     - path: data/data.xml
       md5: a304afb96060aad90176268345e10355
       size: 37891850
@@ -13,8 +13,8 @@ stages:
       md5: 1e966c5b46ddc9a269b1a05970a741fa
       size: 2015
     - path: src/utils/common.py
-      md5: cf8738cb2a90710044e64825cc434498
-      size: 841
+      md5: c6c5a79107e3b442ae3026fc51ae4e4f
+      size: 1020
     - path: src/utils/datamgmt.py
       md5: 183f93dcd2e78b78650c1a9194d33f3b
       size: 884
@@ -39,14 +39,14 @@ stages:
       md5: dc31560257874fbca1c623f62b98db6c
       size: 18832723
     - path: configs/config.yaml
-      md5: a54bad447b68aa62d3bb5ef620739bc5
-      size: 354
+      md5: 2a3149dc1240f34478e4ef657b1ae986
+      size: 427
     - path: src/stage_02_featurization.py
       md5: 11337857545b996c256e770dfefd2885
       size: 2959
     - path: src/utils/common.py
-      md5: cf8738cb2a90710044e64825cc434498
-      size: 841
+      md5: c6c5a79107e3b442ae3026fc51ae4e4f
+      size: 1020
     - path: src/utils/featurize.py
       md5: 0a2e10ceb6c9bf6424349677e8187545
       size: 523
@@ -68,14 +68,14 @@ stages:
       md5: 36889aad63ce29b3567947c1dc272c2f
       size: 9895677
     - path: configs/config.yaml
-      md5: a54bad447b68aa62d3bb5ef620739bc5
-      size: 354
+      md5: 2a3149dc1240f34478e4ef657b1ae986
+      size: 427
     - path: src/stage_03_train.py
       md5: 92551d26ac37b6262df08519b9a34dea
       size: 2227
     - path: src/utils/common.py
-      md5: cf8738cb2a90710044e64825cc434498
-      size: 841
+      md5: c6c5a79107e3b442ae3026fc51ae4e4f
+      size: 1020
     params:
       params.yaml:
         train.min_split: 16
@@ -85,3 +85,31 @@ stages:
     - path: artifacts/model/model.pkl
       md5: 346085e40b8cf0389f3bb3fbb5690882
       size: 3553847
+  Evaluate:
+    cmd: python src/stage_04_evaluate.py --config=configs/config.yaml --params=params.yaml
+    deps:
+    - path: artifacts/features/test.pkl
+      md5: a393435a88d22f844aab433b501a89bc
+      size: 2536493
+    - path: artifacts/model/model.pkl
+      md5: 346085e40b8cf0389f3bb3fbb5690882
+      size: 3553847
+    - path: configs/config.yaml
+      md5: 2a3149dc1240f34478e4ef657b1ae986
+      size: 427
+    - path: src/stage_04_evaluate.py
+      md5: 12abfaf847071c1df60cddc3b3d5ebd1
+      size: 2946
+    - path: src/utils/common.py
+      md5: c6c5a79107e3b442ae3026fc51ae4e4f
+      size: 1020
+    outs:
+    - path: prc.json
+      md5: 49023f3d57adbf1314ff1e3f56a719f7
+      size: 130627
+    - path: roc.json
+      md5: 48d63708bcbe98e4f76dbc6f8e24a3e7
+      size: 95594
+    - path: scores.json
+      md5: 075b99c7b6e7123f84c0292a80876f0f
+      size: 75

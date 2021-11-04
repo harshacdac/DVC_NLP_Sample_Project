@@ -63,11 +63,11 @@ stages:
           y: precision
       - roc.json:
           cache: false
-          x: ftr
+          x: fpr
           y: tpr
 
-  run_plots: 
-    cmd: dvc_plots_diff
+  run_plots_diff: 
+    cmd: dvc plots diff
   
   
       
