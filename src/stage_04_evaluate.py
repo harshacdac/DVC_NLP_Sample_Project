@@ -58,11 +58,19 @@ def main(config_path, params_path):
             {"precision": p, "recall": r, "threshold":t}
             for p,r,t in prc_points 
         ]
-
     }
-
     save_json(prc_json_path, prc_data)
     fpr, tpr, roc_threshold = sk_metrics.roc_curve(labels, predictions)
+
+    roc_data = {
+        "roc":[
+            {"fpr": fp, "tpr": tp, "threshold":t}
+            for fp, tp, t in zip(fpr,tpr,roc_threshold)
+        ]
+    }
+    save_json(roc_json_path, roc_data)
+
+   
 
 
 if __name__ == '__main__':
